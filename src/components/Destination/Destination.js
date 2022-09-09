@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledDestination = styled.div``;
 
 const Destination = () => {
-  return <StyledDestination></StyledDestination>;
+  return <StyledDestination>Destination</StyledDestination>;
 };
 
 export default Destination;

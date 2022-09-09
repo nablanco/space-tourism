@@ -1,28 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import styled from "styled-components";
-import { createGlobalStyle } from "styled-components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import App from "./App";
-
-const GlobalStyle = createGlobalStyle`
-  :root {
-    display: block;
-    margin: 0px;
-    padding: 0px;
-    --text-primary: #FFFFFF;
-    --text-secondary: #D0D6F9;
-    --text-tertiary: #0b0d17;
-  }
-`;
+import Home from "./components/Home/Home";
+import Destination from "./components/Destination/Destination";
+import Crew from "./components/Crew/Crew";
+import Technology from "./components/Technology/Technology";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <GlobalStyle />
-      <App />
+      <Routes>
+        <Route path="/" element={<App />}>
+          <Route path="home" element={<Home />} />
+          <Route path="destination" element={<Destination />} />
+          <Route path="Crew" element={<Crew />} />
+          <Route path="Technology" element={<Technology />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
