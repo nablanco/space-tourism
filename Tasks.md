@@ -38,4 +38,9 @@ Space Tourism Website - Tasks
   - Finished building Sidebar styling, but having issues with passing state from parent Navbar to child Sidebar to control opening and closing. Needs review.
 - Add homepage styling and link 'Explore' button to '/destination'.
 
-4.
+4. Add mobile pages
+
+- Start with Destinations page.
+  - Top two text boxes are standard throughout.
+  - Image is dependent on selected destination. Use 'useState' to control state of image, as well as text below related to destination.
+  - For the destination selection buttons, map through the destinations object in the asset_data array. Clicking on any single button will update the desination index, making it easier to select the specific destination object needed to pass information to the page.
