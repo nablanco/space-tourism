@@ -1,6 +1,4 @@
-import React from "react";
-
-export const SidebarData = [
+const NavData = [
   {
     name: "Home",
     path: "/",
@@ -22,3 +20,5 @@ export const SidebarData = [
     number: "03",
   },
 ];
+
+export default NavData;

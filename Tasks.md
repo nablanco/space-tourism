@@ -21,7 +21,7 @@ Space Tourism Website - Tasks
 - Add GlobalStyles to index.js to pass basic styling.
   - Pass margin/padding 0px along with color variables.
 
-2. Setup main router paths
+2. Setup main router paths (feature/basic-architecture)
 
 - Resources:
   - https://reactrouter.com/en/main/getting-started/overview
@@ -29,9 +29,13 @@ Space Tourism Website - Tasks
 - Create sidebarData.js file to hold name, path, and icons? for paths.
 - Map router paths to basic navbar to test route functionality. Be able to access each page (home, destination, crew, technology)
 
-3. Build homepage styling, navbar, and side bar
+3. Build homepage styling, navbar, and side bar (feature/basic-architecture)
 
 - Add basic background to homepage
 - Style navbar
 - Style sidebar. For now, assume it is unhidden, to make working with it easier. Worry about funtionality later.
 - Import sidebar component into navbar. Build out hook logic to control sidebar operation.
+  - Finished building Sidebar styling, but having issues with passing state from parent Navbar to child Sidebar to control opening and closing. Needs review.
+- Add homepage styling and link 'Explore' button to '/destination'.
+
+4.
