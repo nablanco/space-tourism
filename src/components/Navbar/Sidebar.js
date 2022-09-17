@@ -17,7 +17,7 @@ const StyledSidebar = styled.div`
   backdrop-filter: blur(81.5485px);
   position: fixed;
   top: 0;
-  right: ${({ sidebarStatus }) => (sidebarStatus ? "0%" : "100%")};
+  right: ${({ sidebarStatus }) => (sidebarStatus ? "0%" : "-100%")};
   transition: 0.6s;
 `;
 const MenuIconClose = styled(NavLink)`
@@ -59,14 +59,12 @@ const ItemName = styled.div`
   font-weight: 400;
 `;
 
-const Sidebar = ({ sidebarStatus: sideBarStatus, showSidebar }) => {
+const Sidebar = ({ sideBarStatus, showSidebar }) => {
   return (
     <StyledSidebar sidebarStatus={sideBarStatus}>
       <MenuIconClose to="#" onClick={showSidebar}>
         <StyledCloseIcon src={iconClose} />
-        {console.log(sideBarStatus)}
       </MenuIconClose>
-
       {NavData.map((item, index) => {
         return (
           <MenuItemLink to={item.path} key={index}>

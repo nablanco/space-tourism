@@ -19,9 +19,9 @@ const Icon = styled.img`
   height: 40px;
 `;
 const StyledLinkList = styled.div`
-  /* display: none; */
+  display: none;
 
-  @media screen {
+  @media screen and (min-width: 768px) {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -55,7 +55,6 @@ const Navbar = () => {
         </StyledLinkList>
         <MenuIconOpen to="#" onClick={showSidebar}>
           <Hamburger src={iconHamburger} />
-          {console.log(sideBarStatus)}
         </MenuIconOpen>
       </StyledNavbar>
       <Sidebar sideBarStatus={sideBarStatus} showSidebar={showSidebar} />
