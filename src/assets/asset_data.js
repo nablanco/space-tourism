@@ -8,10 +8,10 @@ import imageShuttleworth from "./crew/image-mark-shuttleworth.webp";
 import imageGlover from "./crew/image-victor-glover.webp";
 import imageLaunchVehicleLandscape from "./technology/image-launch-vehicle-landscape.jpg";
 import imageLaunchVehiclePortrait from "./technology/image-launch-vehicle-portrait.jpg";
-import imageSpaceCapsuleLandscape from "./technology/image-launch-vehicle-landscape.jpg";
-import imageSpaceCapsulePortrait from "./technology/image-launch-vehicle-portrait.jpg";
-import imageSpaceportLandscape from "./technology/image-launch-vehicle-landscape.jpg";
-import imageSpaceportPortrait from "./technology/image-launch-vehicle-portrait.jpg";
+import imageSpaceCapsuleLandscape from "./technology/image-space-capsule-landscape.jpg";
+import imageSpaceCapsulePortrait from "./technology/image-space-capsule-portrait.jpg";
+import imageSpaceportLandscape from "./technology/image-spaceport-landscape.jpg";
+import imageSpaceportPortrait from "./technology/image-spaceport-portrait.jpg";
 
 const assetData = [
   {

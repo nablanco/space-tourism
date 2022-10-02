@@ -1,10 +1,14 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import assetData from "../../assets/asset_data";
 const destinationData = assetData[0]["destinations"];
+
+const DestinationBackground = styled.div`
+  width: 375px;
+  height: 825px;
+`;
 
 const StyledDestination = styled.div`
   display: flex;
@@ -49,11 +53,15 @@ const DestinationSelection = styled.div`
   align-items: flex-start;
   width: 238px;
   height: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 const DestinationButton = styled.a`
+  font-family: var(--text-primary);
   color: var(--text-secondary);
+  background-color: transparent;
+  border: transparent;
   text-decoration: none;
+  cursor: pointer;
   font-style: normal;
   font-weight: 400;
   padding-bottom: 8px;
@@ -61,14 +69,15 @@ const DestinationButton = styled.a`
   line-height: 17px;
   letter-spacing: 2.3625px;
   text-transform: uppercase;
+
   &:hover {
     border-bottom: 3px solid var(--text-primary);
     color: var(--text-primary);
   }
-  &:active {
-    border-bottom: 3px solid var(--text-primary);
-    color: var(--text-primary);
-  }
+
+  border-bottom: ${(props) =>
+    props.isActive ? "3px solid var(--text-primary)" : undefined};
+  color: ${(props) => (props.isActive ? "var(--text-primary)" : undefined)}; ;
 `;
 const DestinationTitle = styled.div`
   font-family: var(--special-font);
@@ -127,47 +136,50 @@ const Destination = () => {
   const [destinationIndex, setDestinationIndex] = useState(0);
 
   return (
-    <StyledDestination>
-      <Header>
-        <HeaderNumber>01</HeaderNumber>
-        <HeaderText>PICK YOUR DESINATION</HeaderText>
-      </Header>
-      <DestinationImage
-        src={destinationData[destinationIndex]["images"]["webp"]}
-      />
-      <DestinationSelection>
-        {destinationData.map((item, index) => {
-          return (
-            <DestinationButton
-              onClick={() => setDestinationIndex(index)}
-              key={index}
-              to="#"
-            >
-              {item.name}
-            </DestinationButton>
-          );
-        })}
-      </DestinationSelection>
-      <DestinationTitle>
-        {destinationData[destinationIndex]["name"]}
-      </DestinationTitle>
-      <DesinationText>
-        {destinationData[destinationIndex]["description"]}
-      </DesinationText>
-      <Divider />
-      <DestinationStatistic>
-        <StatisticTitle>Avg. Distance</StatisticTitle>
-        <StatisticValue>
-          {destinationData[destinationIndex]["distance"]}
-        </StatisticValue>
-      </DestinationStatistic>
-      <DestinationStatistic>
-        <StatisticTitle>Est. Travel Time</StatisticTitle>
-        <StatisticValue>
-          {destinationData[destinationIndex]["travel"]}
-        </StatisticValue>
-      </DestinationStatistic>
-    </StyledDestination>
+    <DestinationBackground>
+      <StyledDestination>
+        <Header>
+          <HeaderNumber>01</HeaderNumber>
+          <HeaderText>PICK YOUR DESINATION</HeaderText>
+        </Header>
+        <DestinationImage
+          src={destinationData[destinationIndex]["images"]["webp"]}
+        />
+        <DestinationSelection>
+          {destinationData.map((item, index) => {
+            return (
+              <DestinationButton
+                onClick={() => setDestinationIndex(index)}
+                key={item.name}
+                isActive={destinationIndex === index ? true : false}
+                to="#"
+              >
+                {item.name}
+              </DestinationButton>
+            );
+          })}
+        </DestinationSelection>
+        <DestinationTitle>
+          {destinationData[destinationIndex]["name"]}
+        </DestinationTitle>
+        <DesinationText>
+          {destinationData[destinationIndex]["description"]}
+        </DesinationText>
+        <Divider />
+        <DestinationStatistic>
+          <StatisticTitle>Avg. Distance</StatisticTitle>
+          <StatisticValue>
+            {destinationData[destinationIndex]["distance"]}
+          </StatisticValue>
+        </DestinationStatistic>
+        <DestinationStatistic>
+          <StatisticTitle>Est. Travel Time</StatisticTitle>
+          <StatisticValue>
+            {destinationData[destinationIndex]["travel"]}
+          </StatisticValue>
+        </DestinationStatistic>
+      </StyledDestination>
+    </DestinationBackground>
   );
 };
 

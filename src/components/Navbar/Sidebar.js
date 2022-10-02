@@ -19,6 +19,7 @@ const StyledSidebar = styled.div`
   top: 0;
   right: ${({ sidebarStatus }) => (sidebarStatus ? "0%" : "-100%")};
   transition: 0.6s;
+  z-index: 99;
 `;
 const MenuIconClose = styled(NavLink)`
   display: flex;
@@ -41,13 +42,7 @@ const MenuItemLink = styled(NavLink)`
   margin-bottom: 32px;
   width: 250px;
   height: 31px;
-  /* &[class*="active"] {
-    color: orange;
-  } */
   &:hover {
-    border-right: 4px solid var(--text-primary);
-  }
-  &:active {
     border-right: 4px solid var(--text-primary);
   }
 `;
@@ -59,7 +54,11 @@ const ItemName = styled.div`
   font-weight: 400;
 `;
 
-const Sidebar = ({ sideBarStatus, showSidebar }) => {
+const Sidebar = ({ sideBarStatus, showSidebar, setPageBackground }) => {
+  const handleClick = (event, index) => {
+    setPageBackground(index);
+    showSidebar();
+  };
   return (
     <StyledSidebar sidebarStatus={sideBarStatus}>
       <MenuIconClose to="#" onClick={showSidebar}>
@@ -67,7 +66,11 @@ const Sidebar = ({ sideBarStatus, showSidebar }) => {
       </MenuIconClose>
       {NavData.map((item, index) => {
         return (
-          <MenuItemLink to={item.path} key={index}>
+          <MenuItemLink
+            to={item.path}
+            onClick={(event) => handleClick(event, index)}
+            key={item.name}
+          >
             <ItemNumber>{item.number}</ItemNumber>
             <ItemName>{item.name}</ItemName>
           </MenuItemLink>

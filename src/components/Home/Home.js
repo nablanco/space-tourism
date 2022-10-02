@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
+
+import backgroundHomeMobile from "../../assets/home/background-home-mobile.jpg";
+import backgroundHomeTablet from "../../assets/home/background-home-tablet.jpg";
+import backgroundHomeDesktop from "../../assets/home/background-home-desktop.jpg";
 
 const StyledHome = styled.div`
   display: flex;
@@ -12,7 +16,7 @@ const HomeTextContainer = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-between;
-  margin: 48px 24px 81px 24px;
+  margin: 48px 24px 47px 24px;
 `;
 const OpeningText = styled.div`
   color: var(--text-secondary);
@@ -58,6 +62,8 @@ const ExploreButtonText = styled.div`
 `;
 
 const Home = () => {
+  const [pageBackground, setPageBackground] = useOutletContext();
+
   return (
     <StyledHome>
       <HomeTextContainer>
@@ -70,7 +76,8 @@ const Home = () => {
           experience!
         </ParagraphText>
       </HomeTextContainer>
-      <ExploreButton to="/destination">
+      <ExploreButton onClick={() => setPageBackground(0)} to="/destination">
+        {console.log(pageBackground)}
         <ExploreButtonText>EXPLORE</ExploreButtonText>
       </ExploreButton>
     </StyledHome>
