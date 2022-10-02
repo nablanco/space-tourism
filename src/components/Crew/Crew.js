@@ -18,6 +18,12 @@ const Header = styled.div`
   align-items: center;
   margin-top: 24px;
   margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    order: 1;
+    align-self: flex-start;
+    margin: 40px 0px 60px 38.5px;
+  }
 `;
 const HeaderNumber = styled.div`
   font-style: normal;
@@ -27,6 +33,11 @@ const HeaderNumber = styled.div`
   letter-spacing: 2.7px;
   opacity: 0.25;
   margin-right: 18px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
 `;
 const HeaderText = styled.div`
   font-style: normal;
@@ -35,6 +46,11 @@ const HeaderText = styled.div`
   line-height: 19px;
   letter-spacing: 2.7px;
   text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
 `;
 const CrewImageContainer = styled.div`
   display: flex;
@@ -44,11 +60,20 @@ const CrewImageContainer = styled.div`
   height: 223px;
   margin-bottom: 26px;
   object-fit: contain;
-  border-bottom: 1px solid #383b4b;
+
+  @media screen and (min-width: 768px) {
+    order: 3;
+    height: 532px;
+    margin-bottom: 0px;
+  }
 `;
 const CrewImage = styled.img`
   height: 222px;
   object-fit: contain;
+
+  @media screen and (min-width: 768px) {
+    height: 532px;
+  }
 `;
 const CrewInfoContainer = styled.div`
   display: flex;
@@ -56,6 +81,13 @@ const CrewInfoContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 327px;
+
+  @media screen and (min-width: 768px) {
+    flex-flow: column-reverse nowrap;
+    order: 2;
+    width: 500px;
+    height: 232px;
+  }
 `;
 const CrewIndicatorContainer = styled.div`
   display: flex;
@@ -63,6 +95,10 @@ const CrewIndicatorContainer = styled.div`
   justify-content: space-between;
   width: 88px;
   margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
 `;
 const CrewIndicator = styled.button`
   width: 10px;
@@ -95,6 +131,11 @@ const CrewRole = styled.div`
   text-transform: uppercase;
   opacity: 0.5;
   margin-bottom: 8px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 28px;
+  }
 `;
 const CrewName = styled.div`
   font-family: var(--special-font);
@@ -105,6 +146,11 @@ const CrewName = styled.div`
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 40px;
+    line-height: 46px;
+  }
 `;
 const CrewBio = styled.div`
   font-family: var(--body-font);
@@ -114,6 +160,12 @@ const CrewBio = styled.div`
   font-size: 15px;
   line-height: 25px;
   text-align: center;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
 `;
 
 const Crew = () => {

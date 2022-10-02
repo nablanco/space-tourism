@@ -1,10 +1,10 @@
 Space Tourism Website - Tasks
 
 - Outstandng Issues:
-  - (Done) Background images are not sizing correctly
   - Background image is not properly selected for Destination page when arriving from the 'Explore' button on the Home page.
     - Tried using 'useOutletContext' hook as defined by React Router, but can get it to work. Consider shifting to global context.
   - (In Progress) Style pages for Tablet
+    - Navbar navlinks need to have active styling
   - Style pages for Desktop
     - Technology images need to change to portrait on desktop version
 

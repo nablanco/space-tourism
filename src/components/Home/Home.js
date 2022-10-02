@@ -2,10 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Link, useOutletContext } from "react-router-dom";
 
-import backgroundHomeMobile from "../../assets/home/background-home-mobile.jpg";
-import backgroundHomeTablet from "../../assets/home/background-home-tablet.jpg";
-import backgroundHomeDesktop from "../../assets/home/background-home-desktop.jpg";
-
 const StyledHome = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -17,6 +13,11 @@ const HomeTextContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 48px 24px 47px 24px;
+
+  @media screen and (min-width: 768px) {
+    width: 450px;
+    margin-top: 106px;
+  }
 `;
 const OpeningText = styled.div`
   color: var(--text-secondary);
@@ -27,6 +28,10 @@ const OpeningText = styled.div`
   text-align: center;
   letter-spacing: 2.7px;
   margin-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
 `;
 const BoldText = styled.div`
   font-family: var(--special-font);
@@ -36,6 +41,10 @@ const BoldText = styled.div`
   line-height: 100px;
   text-align: center;
   margin-bottom: 16px;
+  @media screen and (min-width: 768px) {
+    font-size: 150px;
+    line-height: 150px;
+  }
 `;
 const ParagraphText = styled.div`
   color: var(--text-secondary);
@@ -45,6 +54,11 @@ const ParagraphText = styled.div`
   font-size: 15px;
   line-height: 25px;
   text-align: center;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 156px;
+  }
 `;
 const ExploreButton = styled(Link)`
   display: flex;
@@ -55,10 +69,21 @@ const ExploreButton = styled(Link)`
   background-color: var(--text-primary);
   border-radius: 50%;
   text-decoration: none;
+  @media screen and (min-width: 768px) {
+    width: 242px;
+    height: 242px;
+    margin-bottom: 90px;
+  }
 `;
 const ExploreButtonText = styled.div`
   font-family: var(--special-font);
   color: var(--text-tertiary);
+  letter-spacing: 1.5px;
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 2px;
+  }
 `;
 
 const Home = () => {

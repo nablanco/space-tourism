@@ -5,11 +5,6 @@ import styled from "styled-components";
 import assetData from "../../assets/asset_data";
 const destinationData = assetData[0]["destinations"];
 
-const DestinationBackground = styled.div`
-  width: 375px;
-  height: 825px;
-`;
-
 const StyledDestination = styled.div`
   display: flex;
   flex-flow: column nowrap;
@@ -23,6 +18,11 @@ const Header = styled.div`
   align-items: center;
   margin-top: 24px;
   margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    align-self: flex-start;
+    margin: 40px 0px 60px 38.5px;
+  }
 `;
 const HeaderNumber = styled.div`
   font-style: normal;
@@ -32,6 +32,11 @@ const HeaderNumber = styled.div`
   letter-spacing: 2.7px;
   opacity: 0.25;
   margin-right: 18px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
 `;
 const HeaderText = styled.div`
   font-style: normal;
@@ -40,11 +45,22 @@ const HeaderText = styled.div`
   line-height: 19px;
   letter-spacing: 2.7px;
   text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+    line-height: 24px;
+  }
 `;
 const DestinationImage = styled.img`
   height: 170px;
   width: 170px;
   margin-bottom: 26px;
+
+  @media screen and (min-width: 768px) {
+    height: 300px;
+    width: 300px;
+    margin-bottom: 53px;
+  }
 `;
 const DestinationSelection = styled.div`
   display: flex;
@@ -54,6 +70,11 @@ const DestinationSelection = styled.div`
   width: 238px;
   height: 28px;
   margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    width: 285.5px;
+    height: 34px;
+  }
 `;
 const DestinationButton = styled.a`
   font-family: var(--text-primary);
@@ -77,7 +98,12 @@ const DestinationButton = styled.a`
 
   border-bottom: ${(props) =>
     props.isActive ? "3px solid var(--text-primary)" : undefined};
-  color: ${(props) => (props.isActive ? "var(--text-primary)" : undefined)}; ;
+  color: ${(props) => (props.isActive ? "var(--text-primary)" : undefined)};
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
 `;
 const DestinationTitle = styled.div`
   font-family: var(--special-font);
@@ -87,6 +113,10 @@ const DestinationTitle = styled.div`
   line-height: 64px;
   text-align: center;
   text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    font-size: 80px;
+    line-height: 92px;
+  }
 `;
 const DesinationText = styled.div`
   font-family: var(--body-font);
@@ -98,19 +128,38 @@ const DesinationText = styled.div`
   font-size: 15px;
   line-height: 25px;
   text-align: center;
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 28px;
+  }
 `;
-const Divider = styled.div`
-  width: 327px;
-  border-top: 1px solid #383b4b;
-  margin-bottom: 32px;
-`;
-const DestinationStatistic = styled.div`
+const StatisticsContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 32px;
+  padding-top: 32px;
+  width: 327px;
+  border-top: 1px solid #383b4b;
+  @media screen and (min-width: 768px) {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 443px;
+    padding: 28px 65.5px 0 65.5px;
+  }
+`;
+const Statistic = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
   height: 61px;
+  margin-bottom: 32px;
+
+  @media screen and (min-width: 768px) {
+    width: 216px;
+  }
 `;
 const StatisticTitle = styled.div`
   color: var(--text-secondary);
@@ -121,6 +170,8 @@ const StatisticTitle = styled.div`
   text-align: center;
   letter-spacing: 2.3625px;
   text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+  }
 `;
 const StatisticValue = styled.div`
   font-family: var(--special-font);
@@ -130,56 +181,57 @@ const StatisticValue = styled.div`
   line-height: 32px;
   text-align: center;
   text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+  }
 `;
 
 const Destination = () => {
   const [destinationIndex, setDestinationIndex] = useState(0);
 
   return (
-    <DestinationBackground>
-      <StyledDestination>
-        <Header>
-          <HeaderNumber>01</HeaderNumber>
-          <HeaderText>PICK YOUR DESINATION</HeaderText>
-        </Header>
-        <DestinationImage
-          src={destinationData[destinationIndex]["images"]["webp"]}
-        />
-        <DestinationSelection>
-          {destinationData.map((item, index) => {
-            return (
-              <DestinationButton
-                onClick={() => setDestinationIndex(index)}
-                key={item.name}
-                isActive={destinationIndex === index ? true : false}
-                to="#"
-              >
-                {item.name}
-              </DestinationButton>
-            );
-          })}
-        </DestinationSelection>
-        <DestinationTitle>
-          {destinationData[destinationIndex]["name"]}
-        </DestinationTitle>
-        <DesinationText>
-          {destinationData[destinationIndex]["description"]}
-        </DesinationText>
-        <Divider />
-        <DestinationStatistic>
+    <StyledDestination>
+      <Header>
+        <HeaderNumber>01</HeaderNumber>
+        <HeaderText>PICK YOUR DESINATION</HeaderText>
+      </Header>
+      <DestinationImage
+        src={destinationData[destinationIndex]["images"]["webp"]}
+      />
+      <DestinationSelection>
+        {destinationData.map((item, index) => {
+          return (
+            <DestinationButton
+              onClick={() => setDestinationIndex(index)}
+              key={item.name}
+              isActive={destinationIndex === index ? true : false}
+              to="#"
+            >
+              {item.name}
+            </DestinationButton>
+          );
+        })}
+      </DestinationSelection>
+      <DestinationTitle>
+        {destinationData[destinationIndex]["name"]}
+      </DestinationTitle>
+      <DesinationText>
+        {destinationData[destinationIndex]["description"]}
+      </DesinationText>
+      <StatisticsContainer>
+        <Statistic>
           <StatisticTitle>Avg. Distance</StatisticTitle>
           <StatisticValue>
             {destinationData[destinationIndex]["distance"]}
           </StatisticValue>
-        </DestinationStatistic>
-        <DestinationStatistic>
+        </Statistic>
+        <Statistic>
           <StatisticTitle>Est. Travel Time</StatisticTitle>
           <StatisticValue>
             {destinationData[destinationIndex]["travel"]}
           </StatisticValue>
-        </DestinationStatistic>
-      </StyledDestination>
-    </DestinationBackground>
+        </Statistic>
+      </StatisticsContainer>
+    </StyledDestination>
   );
 };
 
