@@ -6,6 +6,12 @@ const StyledHome = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+
+  @media screen and (min-width: 1440px) {
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 `;
 const HomeTextContainer = styled.div`
   display: flex;
@@ -18,6 +24,11 @@ const HomeTextContainer = styled.div`
     width: 450px;
     margin-top: 106px;
   }
+
+  @media screen and (min-width: 1440px) {
+    width: 450px;
+    margin: 251px 0px 131px 165px;
+  }
 `;
 const OpeningText = styled.div`
   color: var(--text-secondary);
@@ -28,9 +39,16 @@ const OpeningText = styled.div`
   text-align: center;
   letter-spacing: 2.7px;
   margin-bottom: 16px;
+
   @media screen and (min-width: 768px) {
     font-size: 20px;
     line-height: 24px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: 4.725px;
   }
 `;
 const BoldText = styled.div`
@@ -41,9 +59,15 @@ const BoldText = styled.div`
   line-height: 100px;
   text-align: center;
   margin-bottom: 16px;
+
   @media screen and (min-width: 768px) {
     font-size: 150px;
     line-height: 150px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 150px;
+    line-height: 172px;
   }
 `;
 const ParagraphText = styled.div`
@@ -59,6 +83,11 @@ const ParagraphText = styled.div`
     line-height: 28px;
     margin-bottom: 156px;
   }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 18px;
+    line-height: 32px;
+  }
 `;
 const ExploreButton = styled(Link)`
   display: flex;
@@ -69,10 +98,22 @@ const ExploreButton = styled(Link)`
   background-color: var(--text-primary);
   border-radius: 50%;
   text-decoration: none;
+
   @media screen and (min-width: 768px) {
     width: 242px;
     height: 242px;
     margin-bottom: 90px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 274px;
+    height: 274px;
+    margin-right: 165px;
+
+    &:hover {
+      box-shadow: 0px 0px 0px 88px rgba(255, 255, 255, 0.2);
+      transition: 0.6s;
+    }
   }
 `;
 const ExploreButtonText = styled.div`

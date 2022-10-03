@@ -70,7 +70,7 @@ const StyledApp = styled.div`
     background-image: url(${(props) => tabletBackgrounds[props.background]});
   }
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: 1440px) {
     background-image: url(${(props) => desktopBackgrounds[props.background]});
   }
 `;

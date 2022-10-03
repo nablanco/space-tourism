@@ -119,8 +119,7 @@ const TechnologyButton = styled.a`
   letter-spacing: 1px;
 
   &:hover {
-    color: var(--text-tertiary);
-    background-color: white;
+    border: 1px solid rgba(255, 255, 255);
   }
 
   color: var(${(props) => (props.isActive ? "--text-tertiary" : undefined)});

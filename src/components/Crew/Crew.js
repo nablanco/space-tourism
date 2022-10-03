@@ -112,7 +112,7 @@ const CrewIndicator = styled.button`
   opacity: ${(props) => (props.isActive ? 1 : undefined)};
 
   &:hover {
-    opacity: 1;
+    opacity: 0.5;
   }
 `;
 const CrewTextContainer = styled.div`

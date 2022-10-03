@@ -18,6 +18,11 @@ const StyledNavbar = styled.nav`
   @media screen and (min-width: 768px) {
     padding: 0 0 0 39px;
   }
+
+  @media screen and (min-width: 768px) {
+    margin-top: 40px;
+    padding: 0 0 0 55px;
+  }
 `;
 const Icon = styled.img`
   width: 40px;
@@ -26,6 +31,7 @@ const Icon = styled.img`
   @media screen and (min-width: 768px) {
     width: 48px;
     height: 48px;
+    margin-right: 64px;
   }
 `;
 const StyledLinkList = styled.div`
@@ -42,6 +48,31 @@ const StyledLinkList = styled.div`
     backdrop-filter: blur(40.7742px);
     padding: 39px 48px 0px 48px;
   }
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 542px;
+    height: 57px;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(40.7742px);
+    padding: 39px 165px 0px 123px;
+  }
+`;
+const StyledLine = styled.div`
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    left: -443px;
+    top: 48px;
+    width: 473px;
+    height: 1px;
+    background: #ffffff;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+    z-index: 99;
+  }
 `;
 const NavbarLink = styled(NavLink)`
   font-family: -var(--main-font);
@@ -55,8 +86,35 @@ const NavbarLink = styled(NavLink)`
   height: 54px;
   background-color: transparent;
   cursor: pointer;
+
   &:hover {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+  }
+
+  &[class*="active"] {
     border-bottom: 3px solid var(--text-primary);
+  }
+
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
+  }
+`;
+
+const NavbarLinkNumber = styled.div`
+  display: none;
+
+  @media screen and (min-width: 1440px) {
+    display: block;
+    margin-right: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 2.7px;
   }
 `;
 
@@ -74,6 +132,7 @@ const Hamburger = styled.img`
 
 const Navbar = ({ background, setPageBackground }) => {
   const [sideBarStatus, setSidebarStatus] = useState(false);
+
   const showSidebar = () => setSidebarStatus(!sideBarStatus);
 
   return (
@@ -81,6 +140,7 @@ const Navbar = ({ background, setPageBackground }) => {
       <StyledNavbar>
         <Icon src={iconLogo} />
         <StyledLinkList>
+          <StyledLine />
           {NavData.map((item, index) => {
             return (
               <NavbarLink
@@ -88,6 +148,7 @@ const Navbar = ({ background, setPageBackground }) => {
                 onClick={() => setPageBackground(index)}
                 key={index}
               >
+                <NavbarLinkNumber>{item.number}</NavbarLinkNumber>
                 {item.name}
               </NavbarLink>
             );

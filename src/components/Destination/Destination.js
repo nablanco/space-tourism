@@ -92,7 +92,7 @@ const DestinationButton = styled.a`
   text-transform: uppercase;
 
   &:hover {
-    border-bottom: 3px solid var(--text-primary);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.5);
     color: var(--text-primary);
   }
 
