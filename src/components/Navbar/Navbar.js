@@ -19,7 +19,7 @@ const StyledNavbar = styled.nav`
     padding: 0 0 0 39px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     margin-top: 40px;
     padding: 0 0 0 55px;
   }
@@ -62,7 +62,7 @@ const StyledLinkList = styled.div`
   }
 `;
 const StyledLine = styled.div`
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     position: absolute;
     left: -443px;
     top: 48px;

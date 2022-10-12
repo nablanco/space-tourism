@@ -18,7 +18,7 @@ const HomeTextContainer = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-between;
-  margin: 48px 24px 47px 24px;
+  margin: 58px 24px 81px 24px;
 
   @media screen and (min-width: 768px) {
     width: 450px;
