@@ -1,12 +1,12 @@
 Space Tourism Website - Tasks
 
 - Outstandng Issues:
-  - Set /home path as default in react router
-  - Background image is not properly selected for Destination page when arriving from the 'Explore' button on the Home page.
+  - (Done) Set /home path as default
+  - (Fix for next version) Background image is not properly selected for Destination page when arriving from the 'Explore' button on the Home page.
     - Tried using 'useOutletContext' hook as defined by React Router, but can get it to work. Consider shifting to global context.
-  - (In Progress) Style pages for Desktop
+  - (Done) Style pages for Desktop
     - (Done) Add navbar styled line
-    - Technology images need to change to portrait on desktop version
+    - (Done) Technology images need to change to portrait on desktop version
 
 1. Set up project (feature/setup)
 
