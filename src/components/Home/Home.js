@@ -11,6 +11,7 @@ const StyledHome = styled.div`
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
+    max-width: 1440px;
   }
 `;
 const HomeTextContainer = styled.div`

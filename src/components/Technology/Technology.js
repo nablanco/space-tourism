@@ -10,6 +10,10 @@ const StyledTechnology = styled.div`
   flex-flow: column nowrap;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (min-width: 1440px) {
+    max-width: 1440px;
+  }
 `;
 const Header = styled.div`
   display: flex;

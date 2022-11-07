@@ -22,6 +22,7 @@ const StyledNavbar = styled.nav`
   @media screen and (min-width: 1440px) {
     margin-top: 40px;
     padding: 0 0 0 55px;
+    max-width: 1440px;
   }
 `;
 const Icon = styled.img`

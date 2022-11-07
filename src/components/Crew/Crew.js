@@ -13,6 +13,7 @@ const StyledCrew = styled.div`
 
   @media screen and (min-width: 1440px) {
     align-items: flex-start;
+    max-width: 1440px;
   }
 `;
 const Header = styled.div`
