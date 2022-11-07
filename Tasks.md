@@ -7,6 +7,7 @@ Space Tourism Website - Tasks
   - (Done) Style pages for Desktop
     - (Done) Add navbar styled line
     - (Done) Technology images need to change to portrait on desktop version
+  - (In Progress) Set desktop max width to 1440px so that the app doesnt spread to the edges on larger screens
 
 1. Set up project (feature/setup)
 
