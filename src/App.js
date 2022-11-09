@@ -75,14 +75,20 @@ const StyledApp = styled.div`
   }
 `;
 
+const CenterApp = styled.div`
+  margin-left: max(0px, calc((100% - 1440px) / 2));
+`;
+
 const App = () => {
   const [pageBackground, setPageBackground] = useState(0);
 
   return (
     <StyledApp background={pageBackground}>
       <GlobalStyle />
-      <Navbar setPageBackground={setPageBackground} />
-      <Outlet context={[pageBackground, setPageBackground]} />
+      <CenterApp>
+        <Navbar setPageBackground={setPageBackground} />
+        <Outlet context={[pageBackground, setPageBackground]} />
+      </CenterApp>
     </StyledApp>
   );
 };
