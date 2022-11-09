@@ -78,6 +78,10 @@ const StyledApp = styled.div`
 const CenterApp = styled.div`
   margin-left: max(0px, calc((100% - 1440px) / 2));
   margin-bottom: 100px;
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 0px;
+  }
 `;
 
 const App = () => {
