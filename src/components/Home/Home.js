@@ -129,7 +129,7 @@ const ExploreButtonText = styled.div`
 `;
 
 const Home = () => {
-  const [pageBackground, setPageBackground] = useOutletContext();
+  const [setPageBackground] = useOutletContext();
 
   return (
     <StyledHome>
@@ -144,7 +144,6 @@ const Home = () => {
         </ParagraphText>
       </HomeTextContainer>
       <ExploreButton onClick={() => setPageBackground(0)} to="/destination">
-        {console.log(pageBackground)}
         <ExploreButtonText>EXPLORE</ExploreButtonText>
       </ExploreButton>
     </StyledHome>
